@@ -205,3 +205,65 @@ def change_user_data(request):
 # first command :-  pip freeze > requirements.txt
 # second command to remove digit format version : - pip freeze | sed 's/==.*//' > requirements.txt
 
+#All about Django Rest Frame Work Commands :- 
+
+> python -m venv .venv
+> .venv\Scripts\Activate.ps1
+(.venv) > python -m pip install django~=4.0.0
+(.venv) > django-admin startproject django_project .
+(.venv) > python manage.py startapp app_name
+(.venv) > python manage.py migrate
+
+
+
+python manage.py startapp accounts
+
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+
+
+python manage.py startapp posts
+python manage.py makemigrations posts
+
+----------
+
+python -m pip install djangorestframework~=3.13.0
+
+*************
+REST_FRAMEWORK = {
+    
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+    
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+    ],
+    
+}
+*************
+
+
+-
+python -m pip install django-cors-headers~=3.10.0
+
+****
+
+CORS_ORIGIN_WHITELIST = (
+"http://localhost:3000",
+"http://localhost:8000",
+)
+
+
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
+
+*****
+-
+python -m pip install dj-rest-auth       #for login logout built-in
+-
+python -m pip install django-allauth~=0.48.0         #for registration built-in
+
+pip install requests
+
