@@ -200,3 +200,8 @@ def change_user_data(request):
         return render(request , 'profile.html' ,{'form' : form})
     else:
         return redirect('signup')
+
+# Get requirements.txt without version ,only just name :
+# first command :-  pip freeze > requirements.txt
+# second command to remove digit format version : - pip freeze | sed 's/==.*//' > requirements.txt
+
